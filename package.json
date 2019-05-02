@@ -1,9 +1,14 @@
 {
   "name": "projekti",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
+    "@pusher/chatkit": "github:pusher/chatkit-client-js#pong-logging",
+    "@pusher/chatkit-client": "^1.5.0",
+    "@pusher/chatkit-server": "^1.1.0",
+    "bootstrap": "^4.3.1",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0"
   },
@@ -27,5 +32,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "."
 }

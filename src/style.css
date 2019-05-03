@@ -45,6 +45,7 @@ form{
     border-color: #000000;
 }
 
+
 #root {
     height: 100%;
 }
@@ -68,24 +69,34 @@ form{
             "r m m m m "
             "r m m m m "
             "r m m m m "
-            "n s s s s ";
+            "r s s s s ";
 
 }
 @media screen and (max-width: 980px) {
     .app {
         /* height: 110%; */
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr 3fr 1fr 0fr 1px;
+        grid-template-rows: 1fr 3fr 1fr 0.5fr 1px;
         grid-template-areas:
         "t m m m m "
         "r m m m m "
         "r m m m m "
-        "n s s s s ";
+        "r s s s s ";
     }}
 
 .new-room-form {
-    grid-area: n;
+     top: 80%;
+     left: 55%;
+    height: 100px;
+    width: 100px;
+     border-radius: 50%;
+     position: absolute;
+ }
+.plus{
+    padding-top: 24px;
+    height: 62px;
 }
+
 .tyhja{
     grid-area: t;
 }
@@ -102,22 +113,42 @@ form{
     grid-area: s;
 }
 
-/* REST OF CSS */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #000000;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
 .rooms-list {
     box-sizing: border-box;
     padding: 10px;
     background-color: var(--main-color);
     height: 100%;
+    overflow: scroll;
 }
 
 .rooms-list ul {
     list-style-type: none;
     padding: 0;
-    overflow: auto;
+
 }
 
 .rooms-list li {
     margin: 10px 0;
+
 }
 
 .rooms-list h3 {
@@ -130,16 +161,18 @@ form{
     font-weight: 600;
     text-decoration: none;
 
+
 }
 
 .rooms-list .room.active a {
     color: var(--secondary-text-color);
+
 }
 
 .new-room-form {
     padding: 0 5px;
-    background: var(--secondary-color);
-    color: var(--main-text-color);
+    background: white;
+    color: black;
 }
 
 .new-room-form form {
@@ -155,7 +188,7 @@ form{
 }
 
 .new-room-form button {
-    background: var(--secondary-color);
+    background: #ffffff00;
     color: var(--secondary-text-color);
     border: 0;
 }
@@ -217,6 +250,7 @@ form{
     display: flex;
     margin-bottom: 0px;
 }
+
 .new-question{
     padding: 45px 45px;
     font-size: x-large;

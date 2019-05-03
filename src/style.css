@@ -91,6 +91,7 @@ form{
     width: 100px;
      border-radius: 50%;
      position: absolute;
+    border: rgba(0,0,0,.9) 2px solid;
  }
 .plus{
     padding-top: 24px;

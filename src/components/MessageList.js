@@ -1,10 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Messages from './Message'
+import RoomList from './RoomList'
 
 
 class MessageList extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      joinedRooms: []
+    }
 
+
+  }
 
 
     componentWillUpdate() {
@@ -19,20 +27,21 @@ class MessageList extends React.Component {
         }
     }
 
+
     render() {
 
         if (!this.props.roomId) {
             return (
                 <div className="message-list">
                     <div className="join-room">
-                        &#8601; Kysy Kysymys
+                      &darr; Kysy Kysymys
                     </div>
                 </div>
             )
         } else
         return (
             <div className="message-list">
-                <p>TÄHÄN KYSYMYS ROOMLIST:JS STÄ</p>
+
                 {this.props.messages.map((messages, index) => {
 
                     return (

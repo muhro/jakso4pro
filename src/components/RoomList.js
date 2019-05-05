@@ -3,6 +3,7 @@ import React from 'react'
 
 
 class RoomList extends React.Component {
+
     render () {
         const orderedRooms = [...this.props.rooms].sort((a, b) => a.id > b.id)
 

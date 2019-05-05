@@ -26,7 +26,7 @@ class Modals extends React.Component {
     render() {
         return (
             <>
-                <Button variant="primary" onClick={this.handleShow}>
+                <Button className="tausta" variant="primary" onClick={this.handleShow}>
                     LUO KÄYTTÄJÄ / KIRJAUDU
                 </Button>
 

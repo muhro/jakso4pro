@@ -1,17 +1,32 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
+
 
 class SendMessageForm extends React.Component {
 
     constructor() {
         super()
         this.state = {
+          joinedRooms: [],
             message: ''
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
+  componentWillUpdate() {
+    const node = ReactDOM.findDOMNode(this)
+    this.shouldScrollToBottom = node.scrollTop + node.clientHeight + 100 >= node.scrollHeight
+  }
 
-    handleChange(e) {
+  componentDidUpdate() {
+    if (this.shouldScrollToBottom) {
+      const node = ReactDOM.findDOMNode(this)
+      node.scrollTop = node.scrollHeight
+    }
+  }
+
+
+  handleChange(e) {
         this.setState({
             message: e.target.value
         })
@@ -25,11 +40,21 @@ class SendMessageForm extends React.Component {
         })
     }
 
+
     render() {
+
+
+      if (this.props.disabled) {
         return (
-            <form
-                onSubmit={this.handleSubmit}
-                className="send-message-form">
+            <form className="hidden">
+
+            </form>
+
+        )
+      } else
+        return (
+            <form className="send-message-form"
+                onSubmit={this.handleSubmit}>
                 <input className="text-area" disabled={this.props.disabled} onChange={this.handleChange} value={this.state.message} placeholder="Lähetä viesti painamalla ENTER" type="text" />
                 <input type="submit" className="send-button">
 

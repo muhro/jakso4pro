@@ -63,39 +63,21 @@ form{
     height: 100%;
     width: auto;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 1fr 5fr 2fr 1fr 200px;
+    grid-template-rows: 1fr 5fr 2fr 1fr 130px;
     grid-template-areas:
-            "t m m m m "
+            "b b b b u "
+            "r m m m m "
             "r m m m m "
             "r m m m m "
             "r m m m m "
             "r s s s s ";
 
 }
-@media screen and (max-width: 980px) {
-    .app {
-        /* height: 110%; */
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr 3fr 1fr 0.5fr 1px;
-        grid-template-areas:
-        "t m m m m "
-        "r m m m m "
-        "r m m m m "
-        "r s s s s ";
-    }}
-
-.new-room-form {
-     top: 80%;
-     left: 55%;
-    height: 100px;
-    width: 100px;
-     border-radius: 50%;
-     position: absolute;
-    border: rgba(0,0,0,.9) 2px solid;
- }
-.plus{
-    padding-top: 24px;
-    height: 62px;
+.tausta{
+    tausta: u;
+}
+.banner{
+    grid-area: b;
 }
 
 .tyhja{
@@ -112,6 +94,49 @@ form{
 
 .send-message-form {
     grid-area: s;
+}
+
+.new-room-form {
+    top: 68%;
+    left: 55%;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    padding: 0 5px;
+    background: #ffffff30;;
+    color: black;
+}
+.rule{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+}
+.rule img{
+    height: 10px;
+}
+.new-room-form:hover{
+    background: white;
+}
+.plus{
+    padding-top: 9px;
+    height: 77px;
+}
+
+.banner{
+    width: 100%;
+    background: black;
+    display: flex;
+}
+.logo{
+    height: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.logo:hover{
+    -webkit-filter: drop-shadow(6px 6px 9px rgba(255, 251, 253, 0.5));
+    filter: drop-shadow(6px 6px 9px rgba(255, 251, 253, 0.5));
 }
 
 ::-webkit-scrollbar {
@@ -170,11 +195,7 @@ form{
 
 }
 
-.new-room-form {
-    padding: 0 5px;
-    background: white;
-    color: black;
-}
+
 
 .new-room-form form {
     display: flex;
@@ -235,6 +256,7 @@ form{
     width: 100%;
     height: 100%;
     background: var(--secondary-color);
+    overflow: scroll;
 }
 
 .message-list .join-room {
@@ -245,7 +267,13 @@ form{
     font-size: 34px;
     font-weight: 300;
 }
-
+.hidden{
+   position: absolute;
+    left: -60%;
+}
+.haku{
+    padding-top: 10px;
+}
 .send-message-form {
     background: var(--send-message-form);
     display: flex;
@@ -278,4 +306,19 @@ form{
 .help-text {
     position: absolute;
     top: 10px;
+}
+@media screen and (max-width: 980px) {
+    .app {
+        /* height: 110%; */
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 3fr 1fr 0.5fr 1px;
+        grid-template-areas:
+                "b b b b t "
+                "r m m m m "
+                "r m m m m "
+                "r s s s s ";
+    }
+    .new-room-form{
+        top: 80%;
+    }
 }

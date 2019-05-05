@@ -5,6 +5,8 @@ import SendMessageForm from './components/SendMessageForm'
 import RoomList from './components/RoomList'
 import NewRoomForm from './components/NewRoomForm'
 import Modal from './components/Modal'
+import Banner from './components/Banner'
+import Rules from './components/Rules'
 
 
 import { tokenUrl, instanceLocator } from '../src/config'
@@ -97,7 +99,9 @@ class App extends React.Component {
     render() {
         return (
             <div className="app">
-                <Modal />
+                <Rules/>
+                <Banner/>
+                <Modal/>
                 <RoomList
                     subscribeToRoom={this.subscribeToRoom}
                     rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]}

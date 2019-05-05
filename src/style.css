@@ -115,6 +115,9 @@ form{
 .rule img{
     height: 10px;
 }
+.rules{
+
+}
 .new-room-form:hover{
     background: white;
 }
@@ -268,11 +271,21 @@ form{
     font-weight: 300;
 }
 .hidden{
-   position: absolute;
-    left: -60%;
+    position: absolute;
+    border: 1px white solid;
+    top: 88%;
+    background: var(--main-color);
+    height: 22%;
+    width: 100%;
+}
+.text{
+    color: white;
+    padding-left: 30px;
+    padding-top: 30px;
 }
 .haku{
     padding-top: 10px;
+    padding-left: 30px;
 }
 .send-message-form {
     background: var(--send-message-form);
@@ -307,11 +320,35 @@ form{
     position: absolute;
     top: 10px;
 }
+#navbar {
+    top: 15%;
+    transition: transform 400ms ease-in;
+    width: 30%;
+    color: white;
+    height: 60%;
+    background-color: black;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+#navbar.slideIn {
+    transform: translateX(149%);
+    position: absolute;
+}
+
+#navbar.slideOut {
+    transform: translateX(225%);
+}
+.klik.slideOut{
+
+    background: white;
+}
+
 @media screen and (max-width: 980px) {
     .app {
         /* height: 110%; */
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr 3fr 1fr 0.5fr 1px;
+        grid-template-rows: 0fr 3fr 1fr 0.5fr 1px;
         grid-template-areas:
                 "b b b b t "
                 "r m m m m "
@@ -319,6 +356,6 @@ form{
                 "r s s s s ";
     }
     .new-room-form{
-        top: 80%;
+        top: 76%;
     }
 }

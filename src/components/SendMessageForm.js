@@ -47,7 +47,8 @@ class SendMessageForm extends React.Component {
       if (this.props.disabled) {
         return (
             <form className="hidden">
-
+             <h2 className={"text"}>   Klikkaa ksymys liittyäksesi keskusteluun tai kysy oma kiperä kysymyksesi.
+             </h2>
             </form>
 
         )

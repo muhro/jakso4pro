@@ -40,12 +40,20 @@ form{
 
 }
 
+
 .btn-primary {
     color: #fff;
     background-color: #000000;
     border-color: #000000;
 }
-
+.modal-content {
+    color: white;
+    position: fixed;
+    background: black;
+    top: 14%;
+    width: 60%;
+    height: 21%;
+}
 
 #root {
     height: 100%;
@@ -389,11 +397,20 @@ send-button input{
 }
 
 .new-question{
-    padding: 45px 45px;
+    padding: 60px 80px;
     font-size: x-large;
 }
 .questions{
     top: 20%;
+}
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #dee2e6;
+    text-shadow: 0 1px 0 #212529;
+    opacity: .5;
 }
 .send-message-form input {
 
@@ -492,7 +509,7 @@ send-button input{
     .rule{
         position: fixed;
         top: 45%;
-        right: -8%;
+        right: -5%;
         width: 150px;
         padding-left: 0;
         margin: 5px;

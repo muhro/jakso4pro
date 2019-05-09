@@ -1,5 +1,5 @@
 import React from "react";
-import fuksifoormi from  "../fuksifoorumi.png"
+import fuksifoorumi from  "../fuksifoorumi.png"
 
 class Banner extends React.Component {
 
@@ -9,9 +9,10 @@ class Banner extends React.Component {
 
 
           <div className="banner" >
-            <img className="logo" src={"~lauriaus/projektij4/fuksifoorumi.png"} alt={fuksifoormi}/>
-
-            <form className={"haku"}>
+            <img className="logo" src={fuksifoorumi} alt={fuksifoorumi}/>
+              { /* src={"~lauriaus/projektij4/fuksifoorumi.png"} */
+                /* src={fuksifoorumi}*/}
+              <form className={"haku"}>
               <input placeholder="Hae kysymyksiä"/>
             </form>
           </div>

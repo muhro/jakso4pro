@@ -6,8 +6,10 @@ class Logout extends Component {
   componentDidMount() {
     localStorage.removeItem('token');
     this.props.setUserLogout(null);
-    this.props.history.push('~lauriaus/projektij4');
+    this.props.history.push('/');
   }
+   /* ~lauriaus/projektij4*/
+  /* /  */
 
   render() {
     return (

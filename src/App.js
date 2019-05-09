@@ -19,6 +19,34 @@ class App extends React.Component {
         user: null,
     };
 
+
+    /*
+    Kun haluaa laittaa toimimaan user.metropoliassa (mun siiinä tlauri)
+    * NAV.js vaihda
+    * LOGOUT.js vaihda
+    * Banner.js vaihda
+    *
+    *
+    *
+    *
+    *
+    *
+    *
+    * */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*componentDidMount() {
       const chatManager = new Chatkit.ChatManager({
         instanceLocator,

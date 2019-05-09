@@ -35,7 +35,7 @@ class Rules extends React.Component {
         return (
             <>
                 <Button className="tausta" variant="primary" onClick={this.handleShow}>
-                    Ohjeet
+                   <span> OHJEET</span>
                 </Button>
 
                 <Modal className="tyhja" show={this.state.show} onHide={this.handleClose} >

@@ -57,7 +57,15 @@ form{
     height: 70%;
     padding: 30px;
     overflow: scroll;
-
+}
+h3{
+    font-size: 65px;
+}
+span{
+    font-size: 25px;
+}
+.rooms-list{
+    font-size: 51px;
 }
 .hidden{
     position: absolute;
@@ -151,6 +159,10 @@ form{
 .MuiButton-label-2 {
 
     color: white;
+
+}
+.room-lists{
+    padding: 31px;
 
 }
 .new-room-form {
@@ -339,7 +351,7 @@ send-button input{
     color: var(--secondary-text-color);
     font-weight: 600;
     text-decoration: none;
-    padding-right: 50%;
+    padding-right: 40%;
 }
 .jako{
     border-bottom: 0.3px white solid;
@@ -406,6 +418,8 @@ a:hover{
  }
  svg{
      color: white !important;
+     height: 36px !important;
+     width: 50px !important;
  }
  .jss2{
      top: 30%;
@@ -439,7 +453,7 @@ a:hover{
     font-size: x-large;
 }
 .question{
-    padding: 170px 24px !important;
+    padding: 170px 0px !important;
     padding-bottom: 270px !important;
 }
 
@@ -448,7 +462,7 @@ a:hover{
     height: 38%;
     top: 20%;
     color: white;
-    padding: 28px;
+    padding: 20px;
 }
 .questions:hover{
     background: dodgerblue;
@@ -515,10 +529,10 @@ a:hover{
 }
 .nav{
     grid-area: n;
-    max-width: 60px;
+    max-width: 100px;
     margin: 0;
     position: fixed;
-    right: 8%;
+    right: 10%;
     display: block;
     z-index: 1;
 }

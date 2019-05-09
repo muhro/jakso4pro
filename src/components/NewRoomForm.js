@@ -2,6 +2,7 @@ import React from 'react'
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import plus from  "../plus.png"
+import RoomList from "./RoomList"
 
 class NewRoomForm extends React.Component {
 
@@ -9,7 +10,7 @@ class NewRoomForm extends React.Component {
         super(props, context)
         this.state = {
             roomName: '',
-            show: false
+            show: false,
         }
 
 
@@ -41,6 +42,16 @@ class NewRoomForm extends React.Component {
     }
 
     render () {
+        const active =  this.state.roomName ? 'active' : '';
+        if (active) {
+            {console.log(active)}
+
+            return (
+                <form>
+
+                </form>
+
+            ) } else
         return (
             <>
             <div className="new-room-form">

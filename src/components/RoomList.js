@@ -6,10 +6,10 @@ import PropTypes from 'prop-types';
 
 const styles = {
   list: {
-    width: 250,
+    width: 350,
   },
   fullList: {
-    width: 'auto',
+    width: 350,
   },
 };
 
@@ -32,7 +32,7 @@ class RoomList extends React.Component {
     const { classes } = this.props
 
 
-    const orderedRooms = [...this.props.rooms].sort((a, b) => b.id > a.id)
+    const orderedRooms = [...this.props.rooms].sort((a, b) => b.id < a.id)
     const sideList = (
         <div className="rooms-list">
           <List>

@@ -12,7 +12,7 @@ const Nav = (props) => {
       <div className={"nav"}>
       <nav>
         <List >
-          <ListItem button component={Link} to="/home" >
+          <ListItem button component={Link} to="/~lauriaus/projektij4" >
             <ListItemIcon >
               <Home className={"valikko"}/>
             </ListItemIcon>

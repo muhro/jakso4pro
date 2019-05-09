@@ -12,10 +12,10 @@ const styles = theme => ({
   container: {
     width: '50%',
     padding: '1rem',
-      postion: 'fixed',
+      position: 'fixed !important',
       top: '30%',
       background: 'white',
-      border: '3px white dotted'
+      left: '30%'
   },
   button: {
     margin: theme.spacing.unit,
@@ -51,7 +51,6 @@ class Login extends Component {
     // remove repeatPassword
     delete user.repeatPassword;
     register(user).then(user => {
-      console.log(user);
       if (user.message !== undefined) {
         this.setState({message: user.message});
         return;
@@ -62,7 +61,6 @@ class Login extends Component {
 
   doLogin = () => {
     login(this.state.user.username, this.state.user.password).then(response => {
-      console.log(response);
       if (response.user !== undefined) {
         this.props.setUser(response.user);
         localStorage.setItem('token', response.token);
@@ -80,7 +78,6 @@ class Login extends Component {
     const value = target.value;
     const name = target.name;
 
-    console.log(value, name);
 
     this.setState((prevState) => ({
       user: {
@@ -97,7 +94,7 @@ class Login extends Component {
 
   checkUsername = (username) => {
     checkUser(username).then((result) => {
-      console.log(result.available);
+
       this.setState({validUser: result.available});
     });
   };
@@ -107,7 +104,6 @@ class Login extends Component {
   };
 
   componentDidMount() {
-    console.log(localStorage.getItem('token'));
     if (localStorage.getItem('token') !== null) {
       getUser(localStorage.getItem('token')).then(response => {
         this.props.setUser(response);

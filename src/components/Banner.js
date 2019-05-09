@@ -2,16 +2,14 @@ import React from "react";
 import fuksifoormi from  "../fuksifoorumi.png"
 
 class Banner extends React.Component {
-    reloadPage () {
-        window.location.reload()
-    }
+
   render() {
 
     return (
 
 
           <div className="banner" >
-            <img className="logo" src={fuksifoormi} onClick={() => this.reloadPage()}/>
+            <img className="logo" src={"~lauriaus/projektij4/fuksifoorumi.png"} alt={fuksifoormi}/>
 
             <form className={"haku"}>
               <input placeholder="Hae kysymyksiä"/>

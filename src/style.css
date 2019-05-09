@@ -356,6 +356,21 @@ send-button input{
      color: white;
  }
 
+ .jss43{
+     color: white !important;
+ }
+ .jss2{
+     top: 30%;
+     left: 40%;
+ }
+.jss210{
+    top: 30%;
+    width: 50%;
+    border: 3px white dotted;
+    padding: 1rem;
+    postion: fixed !important;
+    background: white;
+}
 
 .text{
     color: white;
@@ -437,8 +452,11 @@ send-button input{
     margin: 0;
     position: fixed;
     right: 8%;
+    display: block;
 }
-
+.jss1{
+    position: static !important;
+}
 @media  screen and (max-width:1200px) {
     .app {
         display: grid;

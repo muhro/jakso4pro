@@ -398,13 +398,19 @@ a:hover{
  input {
      color: #000000;
  }
-
+.jss1{
+    color: white !important;
+}
  .jss43{
+     color: white !important;
+ }
+ svg{
      color: white !important;
  }
  .jss2{
      top: 30%;
      left: 40%;
+     color: white !important;
  }
 .jss210{
     top: 30%;

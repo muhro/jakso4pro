@@ -40,7 +40,7 @@ class Rules extends React.Component {
 
           <Modal className="tyhja" show={this.state.show} onHide={this.handleClose} >
             <Modal.Header closeButton>
-              <Modal.Title>   <h1> Ohjeet tarkoittavat sivustolla kiellettyä sisältöä.</h1>
+              <Modal.Title>   <h1> Ohjeet tarkoittavat sivustolla kiellettyä sisältöä.  <br></br></h1>
               </Modal.Title>
             </Modal.Header>
             <Modal.Body className="row">

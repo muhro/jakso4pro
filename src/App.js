@@ -1,122 +1,148 @@
-import React from 'react'
-import Chatkit from '@pusher/chatkit-client'
-import MessageList from './components/MessageList'
-import SendMessageForm from './components/SendMessageForm'
-import RoomList from './components/RoomList'
-import NewRoomForm from './components/NewRoomForm'
-import Modal from './components/Modal'
-import Banner from './components/Banner'
-import Rules from './components/Rules'
-
-
-import { tokenUrl, instanceLocator } from '../src/config'
-import Rule from './components/Rule';
-
-
+import React from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Logout from './views/Logout';
+import {getFilesByTag} from './utils/MediaApi';
+import Profile from './views/Profile';
+import Login from './views/Login';
+import Home from './views/Home';
+import Nav from './components/Nav';
+//import RoomList from './components/RoomList';
+//import MessageList from './components/MessageList';
+//import SendMessageForm from './components/SendMessageForm';
+//import NewRoomForm from './components/NewRoomForm';
+//import Chatkit from '@pusher/chatkit-client';
+//import {instanceLocator, tokenUrl} from './config';
 
 class App extends React.Component {
 
-    constructor() {
-        super()
-        this.state = {
-            roomId: null,
-            messages: [],
-            joinableRooms: [],
-            joinedRooms: []
-        }
-        this.sendMessage = this.sendMessage.bind(this)
-        this.subscribeToRoom = this.subscribeToRoom.bind(this)
-        this.getRooms = this.getRooms.bind(this)
-        this.createRoom = this.createRoom.bind(this)
-    }
+    state = {
+        user: null,
+    };
 
-    componentDidMount() {
-        const chatManager = new Chatkit.ChatManager({
-            instanceLocator,
-            userId: 'hei',
-            tokenProvider: new Chatkit.TokenProvider({
-                url: tokenUrl
-            })
-        })
+    /*componentDidMount() {
+      const chatManager = new Chatkit.ChatManager({
+        instanceLocator,
+        userId: 'hei',
+        tokenProvider: new Chatkit.TokenProvider({
+          url: tokenUrl,
+        }),
+      });
 
-        chatManager.connect()
-            .then(currentUser => {
-                this.currentUser = currentUser
-                this.getRooms()
-            })
-            .catch(err => console.log('error on connecting: ', err))
+      chatManager.connect().then(currentUser => {
+        this.currentUser = currentUser;
+        this.getRooms();
+      }).catch(err => console.log('error on connecting: ', err));
     }
 
     getRooms() {
-        this.currentUser.getJoinableRooms()
-            .then(joinableRooms => {
-                this.setState({
-                    joinableRooms,
-                    joinedRooms: this.currentUser.rooms
-                })
-            })
-            .catch(err => console.log('error on joinableRooms: ', err))
+      this.currentUser.getJoinableRooms().then(joinableRooms => {
+        this.setState({
+          joinableRooms,
+          joinedRooms: this.currentUser.rooms,
+        });
+      }).catch(err => console.log('error on joinableRooms: ', err));
     }
 
     subscribeToRoom(roomId) {
-        this.setState({ messages: [] })
-        this.currentUser.subscribeToRoom({
-            roomId: roomId,
-            hooks: {
-                onMessage: message => {
-                    this.setState({
-                        messages: [...this.state.messages, message]
-                    })
-                }
+      this.setState({messages: []});
+      this.currentUser.subscribeToRoom({
+        roomId: roomId,
+        hooks: {
+          onMessage: message => {
+            this.setState({
+              messages: [...this.state.messages, message],
+            });
+          },
 
-            }
-        })
-            .then(room => {
-                this.setState({
-                    roomId: room.id
-                })
-                this.getRooms()
-            })
-            .catch(err => console.log('error on subscribing to room: ', err))
+        },
+      }).then(room => {
+        this.setState({
+          roomId: room.id,
+        });
+        this.getRooms();
+      }).catch(err => console.log('error on subscribing to room: ', err));
     }
 
     sendMessage(text) {
-        this.currentUser.sendMessage({
-            text,
-            roomId: this.state.roomId
-        })
+      this.currentUser.sendMessage({
+        text,
+        roomId: this.state.roomId,
+      });
     }
 
     createRoom(name) {
-        this.currentUser.createRoom({
-            name
-        })
-            .then(room => {
-                this.subscribeToRoom(room.id)
-            })
-            .catch(err => console.log('error with createRoom: ', err))
+      this.currentUser.createRoom({
+        name,
+      }).then(room => {
+        this.subscribeToRoom(room.id);
+      }).catch(err => console.log('error with createRoom: ', err));
     }
+    */
+
+    setUser = (user) => {
+        getFilesByTag('profile').then((files) => {
+            const profilePic = files.filter((file) => {
+                let outputFile = null;
+                if (file.user_id === this.state.user.user_id) {
+                    outputFile = file;
+                }
+                return outputFile;
+            });
+            this.setState((prevState) => {
+                return {
+                    user: {
+                        ...prevState.user,
+                        profilePic: profilePic[0],
+                    },
+                };
+            });
+        });
+        this.setState({user});
+    };
+
+    setUserLogout = (user) => {
+        this.setState({user});
+    };
+
+    checkLogin = () => {
+        return this.state.user !== null;
+    };
 
     render() {
         return (
-            <div className="app">
-                <Rules/>
-                <Banner/>
-                <Modal/>
-                <RoomList
-                    subscribeToRoom={this.subscribeToRoom}
-                    rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]}
-                    roomId={this.state.roomId} />
-                <MessageList
-                    roomId={this.state.roomId}
-                    messages={this.state.messages} />
-                <SendMessageForm
-                    disabled={!this.state.roomId}
-                    sendMessage={this.sendMessage} />
-                <NewRoomForm createRoom={this.createRoom} />
-            </div>
+            <Router>
+                <div>
+                    <Nav checkLogin={this.checkLogin}/>
+                    <Route path="/home" render={(props) => (
+                        <Home/>
+                    )}/>
+                    <Route path="/profile" render={(props) => (
+                        <Profile {...props} user={this.state.user}/>
+                    )}/>
+
+                    <Route exact path="/" render={(props) => (
+                        <Login {...props} setUser={this.setUser}/>
+                    )}/>
+
+                    <Route path="/logout" render={(props) => (
+                        <Logout {...props} setUserLogout={this.setUserLogout}/>
+                    )}/>
+                    {/*<RoomList
+              subscribeToRoom={this.subscribeToRoom}
+              rooms={[...this.state.joinableRooms, ...this.state.joinedRooms]}
+              roomId={this.state.roomId}/>
+          <MessageList
+              roomId={this.state.roomId}
+              messages={this.state.messages}/>
+          <SendMessageForm
+              disabled={!this.state.roomId}
+              sendMessage={this.sendMessage}/>
+          <NewRoomForm createRoom={this.createRoom}/>
+          */}
+                </div>
+            </Router>
         );
     }
 }
 
-export default App
+export default App;

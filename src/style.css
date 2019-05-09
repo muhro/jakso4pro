@@ -104,11 +104,15 @@ form{
     color: black;
 
 }
-.question{
+.questions{
     color: white;
+    padding: 28px;
 }
 .jss2{
     color: white;
+}
+.MuiTypography-subheading-43{
+    color: white!important;
 }
 .MuiButton-label-2 {
 
@@ -325,6 +329,34 @@ send-button input{
     width: 100%;
     margin-bottom: 0;
 }
+
+.MuiSvgIcon-root-21 {
+    color: white;
+}
+.MuiButton-label-73 {
+    color: white;
+}
+.Login-container-72 {
+    width: 50%;
+    padding: 1rem;
+    display: table;
+    position: fixed;
+    top: 34%;
+    left: 23%;
+}
+.MuiPrivateSwipeArea-root-119 {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1199;
+    position: fixed;
+    width: 37px !important;
+}
+ input {
+     color: white;
+ }
+
+
 .text{
     color: white;
     padding-left: 30px;
@@ -334,6 +366,7 @@ send-button input{
     padding-top: 10px;
 
 }
+
 .send-message-form {
     background: var(--send-message-form);
     display: flex;
@@ -344,7 +377,9 @@ send-button input{
     padding: 45px 45px;
     font-size: x-large;
 }
-
+.questions{
+    top: 20%;
+}
 .send-message-form input {
 
     padding: 15px 40px;
@@ -396,6 +431,14 @@ send-button input{
 .veto{
 
 }
+.nav{
+    grid-area: n;
+    max-width: 60px;
+    margin: 0;
+    position: fixed;
+    right: 8%;
+}
+
 @media  screen and (max-width:1200px) {
     .app {
         display: grid;
@@ -404,8 +447,8 @@ send-button input{
         grid-template-columns: 3fr 1fr 5fr 1fr;
         grid-template-rows: 1fr 5fr 2fr 1fr 130px;
         grid-template-areas:
-                "b b b b u "
-                "r m m m m "
+                "b b b b n "
+                "u m m m m "
                 "r m m m m "
                 "r m m m m "
                 "r m m m m "
@@ -451,10 +494,10 @@ send-button input{
     .app {
         height: 125%;
         grid-template-columns: 0.1fr 1fr 5fr 1fr;
-        grid-template-rows:  0fr 3fr 2fr 1fr 0px;
+        grid-template-rows:  0.5fr 3fr 2fr 1fr 0px;
         grid-template-areas:
-                "b b b b u "
-                "r m m m m "
+                "b b b b b "
+                "u m m m m "
                 "r m m m m "
                 "r s s s s ";
     }
@@ -482,7 +525,8 @@ send-button input{
         top: 37%;
     }
     .banner{
-        height: 100px;
+        height: 140px;
+        padding-top: 30px;
     }
     .haku {
         padding-top: 25px;

@@ -61,8 +61,8 @@ class RoomList extends React.Component {
 
     return (
         <div className={"sideBar-left"} >
-          <div  >
-          <Button  className={"questions"} onClick={this.toggleDrawer('left', true)}>Kysymykset</Button>
+          <div   className={"questions"}>
+          <Button   color={"inherit"} onClick={this.toggleDrawer('left', true)}>Kysymykset</Button>
           </div>
           <SwipeableDrawer
 

@@ -3,7 +3,7 @@ import fuksifoormi from  "../fuksifoorumi.png"
 
 class Banner extends React.Component {
     reloadPage () {
-        window.location.reload()
+        window.location.reload("/")
     }
   render() {
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Rule from './Rule'
+import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -10,6 +11,8 @@ class Rules extends React.Component {
   constructor(props, context) {
     super(props, context)
       this.handleClick = this.handleClick.bind(this)
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
       this.state = { visible: false }
     this.state = {
       roomName: '',
@@ -20,16 +23,31 @@ class Rules extends React.Component {
     handleClick() {
         this.setState(prev => ({ visible: !prev.visible }))
     }
+  handleClose() {
+    this.setState({ show: false });
+  }
 
+  handleShow() {
+    this.setState({ show: true });
+  }
 
   render () {
     return (
         <>
-            <button className={"rule"} type="button" onClick={this.handleClick}>
-                {this.state.visible ? 'Ohjeet' : 'Ohjeet'}
-            </button>
-            <hr />
-            <Rule visible={this.state.visible} />
+          <Button className="rule" variant="primary" onClick={this.handleShow}>
+            &#8514; Ohjeet
+          </Button>
+
+          <Modal className="tyhja" show={this.state.show} onHide={this.handleClose} >
+            <Modal.Header closeButton>
+              <Modal.Title>  Ohjeet</Modal.Title>
+            </Modal.Header>
+            <Modal.Body className="row">
+
+
+            </Modal.Body>
+
+          </Modal>
         </>
     )
   }

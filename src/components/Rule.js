@@ -7,7 +7,7 @@ import React from 'react'
             <div id="navbar"
             className={visible ? 'slideIn' : 'slideOut'}>
             Hello
-        </div>
+           </div>
 
     )
 

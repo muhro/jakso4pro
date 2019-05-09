@@ -34,7 +34,14 @@ class MessageList extends React.Component {
             return (
                 <div className="message-list">
                     <div className="join-room">
+                      <div className={"arrows"}>
+                      <div className={"arrow"}>
+                    &larr; Katso Kysymys
+                      </div>
+
+                        <div className={"arrow2"}>
                       &darr; Kysy Kysymys
+                      </div></div>
                     </div>
                 </div>
             )

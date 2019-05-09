@@ -47,12 +47,16 @@ form{
     border-color: #000000;
 }
 .modal-content {
+
     color: white;
     position: fixed;
     background: black;
     top: 10%;
-    width: 30%;
-    height: 21%;
+    left: 10%;
+    width: 77%;
+    height: 70%;
+    padding: 30px;
+
 }
 .MuiButton-containedPrimary-87 {
     color: #fff;
@@ -177,10 +181,8 @@ send-button input{
 .rule img{
     height: 10px;
 }
-.rules{
-
-
-
+.message{
+    margin: 45px 0 !important;
 }
 .new-room-form:hover{
     background: white;
@@ -308,10 +310,6 @@ send-button input{
     border: 0;
 }
 
-.message {
-    margin: 15px 0;
-}
-
 .message .message-username {
     font-size: 11px;
     color: white;
@@ -323,7 +321,17 @@ send-button input{
     color: white;
     display: inline;
     padding: 4px 8px;
+    padding-top: 5px;
     border-radius: 8px;
+}
+.rooms-list .room a {
+    color: var(--secondary-text-color);
+    font-weight: 600;
+    text-decoration: none;
+    padding-right: 50%;
+}
+.jako{
+    border-bottom: 0.3px white solid;
 }
 
 .message-list {
@@ -333,8 +341,17 @@ send-button input{
     height: 100%;
     background: var(--secondary-color);
     overflow: scroll;
+    border-right: 8px white solid !important;
+    border-top: 8px white solid !important;
+;
 }
-
+a{
+    color: white;
+}
+a:hover{
+    color: dodgerblue;
+    border-bottom: 0;
+}
 .message-list .join-room {
     display: flex;
     justify-content: center;
@@ -343,15 +360,7 @@ send-button input{
     font-size: 34px;
     font-weight: 300;
 }
-.hidden{
-    position: absolute;
-    top: 80%;
-    background: rgba(0, 0, 0, 0);
-    height: 20%;
-    width: 100%;
-    margin-bottom: 0;
 
-}
 
 .MuiSvgIcon-root-21 {
     color: white;
@@ -376,7 +385,7 @@ send-button input{
     width: 37px !important;
 }
  input {
-     color: white;
+     color: #000000;
  }
 
  .jss43{
@@ -611,7 +620,8 @@ send-button input{
         font-size: 27px;
     }
     .message-list {
-        height: 118%;
+        height: 121%;
+        overflow: hidden;
     }
 }
 @media screen and (min-width: 1600px){

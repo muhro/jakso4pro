@@ -393,6 +393,7 @@ send-button input{
     padding: 1rem;
     postion: fixed !important;
     background: white;
+    color: white;
 }
 
 .text{
@@ -553,7 +554,7 @@ send-button input{
     .app {
         height: 125%;
         grid-template-columns: 1fr 1fr 1fr 0fr;
-        grid-template-rows: 0.1fr 1fr 1fr  276px;
+        grid-template-rows: 0.3fr 1fr 1fr  276px;
         grid-template-areas:
                 " b b b b "
                 " m m m u "

@@ -10,6 +10,7 @@ import Rules from './components/Rules'
 
 
 import { tokenUrl, instanceLocator } from '../src/config'
+import Rule from './components/Rule';
 
 
 

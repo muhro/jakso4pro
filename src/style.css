@@ -593,7 +593,7 @@ a:hover{
 @media screen and (min-height:700px) {
     .app {
         height: 125%;
-        grid-template-columns: 1fr 1fr 1fr 0fr;
+        grid-template-columns: 1fr 1fr 1fr 0.4fr;
         grid-template-rows: 0.3fr 1fr 1fr  276px;
         grid-template-areas:
                 " b b b b "

@@ -1,9 +1,11 @@
 import React from 'react'
+import Profile from '../views/Profile'
+import {TextField} from "@material-ui/core";
 
 function Message(messages) {
     return (
         <div className="message">
-            <div className="message-username">{messages.username}</div>
+            <div ></div>
             <div className="message-text">{messages.text}</div>
         </div>
     )

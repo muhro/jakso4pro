@@ -124,13 +124,13 @@ class Login extends Component {
     return (
         <div className={classes.container}>
           <div>
-            <Button color="primary" variant="contained"
+            <Button  color="primary" variant="contained"
                     onClick={this.toggleForm}>{(this.state.formToggler && `No account yet?
               Register.`) || `Login`}</Button>
           </div>
           {this.state.formToggler &&
           <React.Fragment>
-            <h1>Login</h1>
+            <h1 className={"login"}>Login</h1>
             <form onSubmit={this.handleLoginSubmit}>
               <TextField fullWidth required name="username" id="username"
                          label="Username"
@@ -151,7 +151,7 @@ class Login extends Component {
 
           {!this.state.formToggler &&
           <React.Fragment>
-            <h1>Register</h1>
+            <h1 className={"login"}>Register</h1>
             <ValidatorForm instantValidate={false} onSubmit={this.handleRegisterSubmit}
                            onError={errors => console.log(errors)}>
               <TextValidator fullWidth name="username" id="username"

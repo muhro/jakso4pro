@@ -54,7 +54,13 @@ form{
     width: 60%;
     height: 21%;
 }
-
+.MuiButton-containedPrimary-87 {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.87) !important;
+}
+.login{
+    color: black;
+}
 #root {
     height: 100%;
 }

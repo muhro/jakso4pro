@@ -51,11 +51,21 @@ form{
     color: white;
     position: fixed;
     background: black;
-    top: 10%;
+    top: 14%;
     left: 10%;
-    width: 77%;
+    width: 60%;
     height: 70%;
     padding: 30px;
+    overflow: scroll;
+
+}
+.hidden{
+    position: absolute;
+    top: 80%;
+    background: rgba(0, 0, 0, 0);
+    height: 20%;
+    width: 100%;
+    margin-bottom: 0;
 
 }
 .MuiButton-containedPrimary-87 {
@@ -205,6 +215,7 @@ send-button input{
     width: 100%;
     background: black;
     display: flex;
+
 }
 .logo{
     height: 40px;

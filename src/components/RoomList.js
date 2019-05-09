@@ -32,7 +32,7 @@ class RoomList extends React.Component {
     const { classes } = this.props
 
 
-    const orderedRooms = [...this.props.rooms].sort((a, b) => a.id > b.id)
+    const orderedRooms = [...this.props.rooms].sort((a, b) => b.id > a.id)
     const sideList = (
         <div className="rooms-list">
           <List>

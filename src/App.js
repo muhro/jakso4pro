@@ -138,7 +138,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <Router>
+            <Router basename='/~lauriaus/projektij4'>
                 <div>
                     <Nav checkLogin={this.checkLogin}/>
                     <Route path="/home" render={(props) => (

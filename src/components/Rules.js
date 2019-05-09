@@ -34,8 +34,8 @@ class Rules extends React.Component {
   render () {
     return (
         <>
-          <Button className="rule" variant="primary" onClick={this.handleShow}>
-            &#8514; Ohjeet
+          <Button className="tausta" variant="primary" onClick={this.handleShow}>
+            Ohjeet
           </Button>
 
           <Modal className="tyhja" show={this.state.show} onHide={this.handleClose} >

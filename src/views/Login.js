@@ -126,7 +126,8 @@ class Login extends Component {
           <div>
             <Button  color="primary" variant="contained"
                     onClick={this.toggleForm}>{(this.state.formToggler && `No account yet?
-              Register.`) || `Login`}</Button>
+              Register.`) || `Login`}
+              </Button>
           </div>
           {this.state.formToggler &&
           <React.Fragment>
@@ -141,7 +142,7 @@ class Login extends Component {
                          label="Password"
                          value={this.state.user.password}
                          onChange={this.handleInputChange}/>
-              <Button className={classes.button} variant="contained"
+              <Button className={classes.button}  variant="contained"
                       color="primary" type="submit">
                 <Send/>&nbsp;Login
               </Button>

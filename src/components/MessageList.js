@@ -36,11 +36,11 @@ class MessageList extends React.Component {
                     <div className="join-room">
                       <div className={"arrows"}>
                       <div className={"arrow"}>
-                          &#8598; Katso Kysymykset
+                          Katso Kysymykset  &#8599;
                       </div>
 
                         <div className={"arrow2"}>
-                      &darr; Kysy Kysymys
+                      Kysy Kysymys  &darr;
                       </div></div>
                     </div>
                 </div>

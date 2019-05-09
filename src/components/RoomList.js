@@ -17,7 +17,7 @@ const styles = {
 class RoomList extends React.Component {
 
   state = {
-    left: false,
+    right: false,
   };
 
   toggleDrawer = (side, open) => () => {
@@ -62,24 +62,23 @@ class RoomList extends React.Component {
     return (
         <div className={"sideBar-left"} >
           <div   className={"questions"}>
-          <Button   color={"inherit"} onClick={this.toggleDrawer('left', true)}>Kysymykset</Button>
+          <Button className={"question"}  color={"inherit"} onClick={this.toggleDrawer('right', true)}>Kysymykset</Button>
           </div>
-          <SwipeableDrawer
-
-              open={this.state.left}
-              onClose={this.toggleDrawer('left', false)}
-              onOpen={this.toggleDrawer('left', true)}
-          >
-            <div
-
-                tabIndex={0}
-                role="button"
-                onClick={this.toggleDrawer('left', false)}
-                onKeyDown={this.toggleDrawer('left', false)}
+            <SwipeableDrawer
+                anchor="right"
+                open={this.state.right}
+                onClose={this.toggleDrawer('right', false)}
+                onOpen={this.toggleDrawer('right', true)}
             >
-              {sideList}
-            </div>
-          </SwipeableDrawer>
+                <div
+                    tabIndex={0}
+                    role="button"
+                    onClick={this.toggleDrawer('right', false)}
+                    onKeyDown={this.toggleDrawer('right', false)}
+                >
+                    {sideList}
+                </div>
+            </SwipeableDrawer>
 
 
 

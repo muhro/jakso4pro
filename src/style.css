@@ -50,14 +50,19 @@ form{
     color: white;
     position: fixed;
     background: black;
-    top: 14%;
-    width: 60%;
+    top: 10%;
+    width: 30%;
     height: 21%;
 }
 .MuiButton-containedPrimary-87 {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.87) !important;
 }
+.loginb{
+    color: #fff;
+    background-color: #000000 !important;
+}
+
 .login{
     color: black !important;
 }
@@ -173,6 +178,8 @@ send-button input{
     height: 10px;
 }
 .rules{
+
+
 
 }
 .new-room-form:hover{
@@ -405,13 +412,13 @@ send-button input{
     font-size: x-large;
 }
 .question{
-    padding-top: 111px !important;
-    padding-left: 18px !important;
+    padding: 170px 24px !important;
+    padding-bottom: 270px !important;
 }
 
 
 .questions{
-    height: 25%;
+    height: 38%;
     top: 20%;
     color: white;
     padding: 28px;
@@ -546,9 +553,9 @@ send-button input{
     .app {
         height: 125%;
         grid-template-columns: 1fr 1fr 1fr 0fr;
-        grid-template-rows: 1fr 1fr 1fr  276px;
+        grid-template-rows: 0.1fr 1fr 1fr  276px;
         grid-template-areas:
-                " m m m b "
+                " b b b b "
                 " m m m u "
                 " m m m o "
                 " s s s s ";

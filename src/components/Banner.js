@@ -15,9 +15,7 @@ class Banner extends React.Component {
 
               { /* src={"~lauriaus/projektij4/fuksifoorumi.png"} */
                   /* src={fuksifoorumi}*/}
-            <form className={"haku"}>
-              <input placeholder="Hae kysymyksiä"/>
-            </form>
+
           </div>
     )}
 }

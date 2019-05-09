@@ -124,7 +124,7 @@ class Login extends Component {
     return (
         <div className={classes.container}>
           <div>
-            <Button  color="primary" variant="contained"
+            <Button className={"loginb"} color="primary" variant="contained"
                     onClick={this.toggleForm}>{(this.state.formToggler && `No account yet?
               Register.`) || `Login`}
               </Button>
@@ -142,7 +142,7 @@ class Login extends Component {
                          label="Password"
                          value={this.state.user.password}
                          onChange={this.handleInputChange}/>
-              <Button className={classes.button}  variant="contained"
+              <Button className={"loginb"}   variant="contained"
                       color="primary" type="submit">
                 <Send/>&nbsp;Login
               </Button>
@@ -198,7 +198,7 @@ class Login extends Component {
                          label="Full name"
                          value={this.state.user.full_name}
                          onChange={this.handleInputChange}/>
-              <Button className={classes.button} variant="contained"
+              <Button className={"loginb"} variant="contained"
                       color="primary" type="submit">
                 <Send/>&nbsp;Register
               </Button>

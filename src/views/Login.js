@@ -9,14 +9,15 @@ import red from '@material-ui/core/colors/red';
 import {withStyles} from '@material-ui/core/styles';
 
 const styles = theme => ({
-  container: {
-    width: '50%',
-    padding: '1rem',
-      position: 'fixed !important',
-      top: '30%',
-      background: 'white',
-      left: '30%'
-  },
+      container: {
+        width: '70%',
+        maxWidth: '80%',
+        padding: '1rem',
+        top: '30%',
+        borderRadius: '5%',
+        backgroundColor: 'rgba(255, 255, 255, 0.5)',
+        margin: '30vh auto'
+      },
   button: {
     margin: theme.spacing.unit,
   },
@@ -122,8 +123,10 @@ class Login extends Component {
   render() {
     const {classes} = this.props;
     return (
-        <div className={classes.container}>
+        <div style ={ { backgroundImage: "url('http://users.metropolia.fi/~joonaesa/pics/login.jpg')", width: "100vw", height: "100vh", backgroundSize: "cover", backgroundRepeat: "no-repeat", overflow: "hidden"} }>
+          <div  className={classes.container}>
           <div>
+
             <Button className={"loginb"} color="primary" variant="contained"
                     onClick={this.toggleForm}>{(this.state.formToggler && `No account yet?
               Register.`) || `Login`}
@@ -208,6 +211,7 @@ class Login extends Component {
           <p className={classes.alert}>
             {this.state.message}
           </p>
+          </div>
         </div>
     );
   }
